@@ -34,13 +34,16 @@ color: #dce1de;
 * {
   box-sizing: border-box;
 }
+h3:hover{
+	color: rgb(255, 128, 64);
+}
 .column {
   float: left;
   width: 32%;
   padding: 0 10px;
 }
 
-.row {margin: 70px -5px;}
+.row {margin: 50px -5px;}
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
@@ -50,8 +53,17 @@ color: #dce1de;
 a{
 text-decoration: none;
 }
-img{
-width: 100%;
+button {
+  background-color: #457b9d;
+  color: white;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100px;
+}
+button:hover{
+	color: rgb(255, 128, 64);
 }
 
 </style>
@@ -67,28 +79,35 @@ width: 100%;
   <li><a href="/user"> User List</a></li>
   
 </ul>
+<br><br><br>
+<form action="/add" method="post">
+<button class="cp">Add Product</button>
+</form>
 
 <div class="row">
   <div class="column">
 <div class="card">
-  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_product_card"><img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h3>Tailored Jeans</h3>
+  <a href="/sport">
+  <img src="/images/Sport.png" alt="Sport Shoes" style="width:100%">
+  <h3>Sport Shoes</h3>
   </a>
 </div>
   </div>
 
   <div class="column">
 <div class="card">
-  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_product_card"><img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h3>Tailored Jeans</h3>
+  <a href="/casual">
+  <img src="/images/Casual.png" alt="Casual Shoes" style="width:100%">
+  <h3>Casual Shoes</h3>
   </a>
 </div>
   </div>
   
   <div class="column">
 <div class="card">
-  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_product_card"><img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h3>Tailored Jeans</h3>
+  <a href="/formal">
+  <img src="/images/Formal.png" alt="Formal Shoes" style="width:100%">
+  <h3>Formal Shoes</h3>
   </a>
 </div>
   </div>

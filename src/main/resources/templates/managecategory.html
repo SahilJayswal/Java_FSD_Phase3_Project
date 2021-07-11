@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+<style>
+body{
+background-color: #f8f9fa;
+}
+ul {
+  list-style-type: none;
+  margin: -8px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{
+color: #dce1de;
+}
+
+.back{
+  border: 1px solid black;
+  font-weight: bold;
+  color: rgb(0, 128, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.back:hover{
+color: rgb(255, 128, 64);
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: #cce3de;
+}
+
+th {
+border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+button {
+  background-color: #457b9d;
+  color: white;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100px;
+}
+button:hover{
+	color: rgb(255, 128, 64);
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li style="float:left"><a href="dashboard">Dashboard</a></li>
+  <li><a href="logout"> Logout</a></li>
+  <li><a href="changepassword"> Change Password</a></li>
+  <li><a href="/purchase"> Purchase report</a></li>
+  <li><a href="/manage"> Manage Products</a></li>
+  <li><a href="/user"> User List</a></li>
+  
+</ul>
+<br><br><br>
+<table>
+	<tr>
+    <th>ID</th>
+    <th>CATEGORY</th>
+    <th>PROD_NAME</th>
+    <th>PROD_PRICE</th>
+     <!--<th>Action</th>-->
+    
+  </tr>
+		<tr th:each="data : ${list}">
+            <td><span th:text="${data.id}"> ID </span></td>
+            <td><span th:text="${data.prod_name}"> PROD_NAME </span></td>
+            <td><span th:text="${data.prod_price}"> PROD_PRICE </span></td>
+            <td><span th:text="${data.category}"> CATEGORY </span></td>
+    <!--<td>
+    <form action="/edit" method="post">
+    	<input type="hidden" id="id" name="id" value="${data.id}">
+    	<button type="submit">Edit</button>
+    </form>
+    </td>-->
+        </tr>
+	
+		<!-- <tr th:each="data: list">
+			<td class="text-center" th:text="${data}">data</td>
+		</tr> -->
+		
+	</table>
+<br><br><br>
+<a class="back" href="/manage">Back</a>
+<a class="back" href="/delete">Delete Product</a>
+
+</body>
+</html>

@@ -1,14 +1,31 @@
 package com.ecommerce.entity;
 
-public class Product {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="PRODUCT")
+public class Product {
+	
+	@Id
+	@GeneratedValue
 	private int id;
+	
 	private String prod_name;
 	private String prod_price;
 	private String category;
 	
 	public Product() {
 		
+	}
+	
+	public Product(String prod_name, String prod_price, String category) {
+		super();
+		this.prod_name = prod_name;
+		this.prod_price = prod_price;
+		this.category = category;
 	}
 	
 	public Product(int id, String prod_name, String prod_price, String category) {

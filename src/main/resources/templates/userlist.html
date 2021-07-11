@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body{
+background-color: #f8f9fa;
+}
+ul {
+  list-style-type: none;
+  margin: -8px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{
+color: #dce1de;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: #cce3de;
+}
+
+th {
+border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li style="float:left"><a href="dashboard">Dashboard</a></li>
+  <li><a href="logout"> Logout</a></li>
+  <li><a href="changepassword"> Change Password</a></li>
+  <li><a href="/purchase"> Purchase report</a></li>
+  <li><a href="/manage"> Manage Products</a></li>
+  <li><a href="/user"> User List</a></li>
+  
+</ul><br>
+<br>
+<form method="post" action="/cust">
+<input type="text" name="search" id="search">
+<button>Submit</button>
+</form>
+	<table>
+		<tr>
+    <th>ID</th>
+    <th>User Name</th>
+    <th>Email Id</th>
+    
+  </tr>
+		<tr th:each="data : ${list}">
+            <td><span th:text="${data.id}"> ID </span></td>
+            <td><span th:text="${data.user_id}"> User ID </span></td>
+            <td><span th:text="${data.email_id}"> Email ID </span></td>
+        </tr>
+	
+		<!-- <tr th:each="data: list">
+			<td class="text-center" th:text="${data}">data</td>
+		</tr> -->
+	</table>
+</body>
+</html>

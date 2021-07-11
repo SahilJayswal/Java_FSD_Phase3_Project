@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<title>Welcome Page</title>
+</head>
+<body>
+<h2>Welcome to Sportyshoes.com</h2>
+<font color="red"><span th:text="${errorMessage}"></span></font>
+<form action="/login" method="POST">
+Username: <input type="text" id="userid" name="userid"><br><br>
+Password: <input type="password" id="pass" name="pass"><br><br>
+<button>Login</button>
+
+</form>
+</body>
+</html>

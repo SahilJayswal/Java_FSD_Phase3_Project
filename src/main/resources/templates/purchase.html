@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body{
+background-color: #f8f9fa;
+}
+ul {
+  list-style-type: none;
+  margin: -8px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{
+color: #dce1de;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: #cce3de;
+}
+
+th {
+border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li style="float:left"><a href="dashboard">Dashboard</a></li>
+  <li><a href="logout"> Logout</a></li>
+  <li><a href="changepassword"> Change Password</a></li>
+  <li><a href="/purchase"> Purchase report</a></li>
+  <li><a href="/manage"> Manage Products</a></li>
+  <li><a href="/user"> User List</a></li>
+  
+</ul><br>
+<br>
+<form method="post" action="/filter">
+<label for="cat">Category:</label>
+<select id="cat" name="cat">
+		  <option value="Sport Shoes">Sport Shoes</option>
+		  <option value="Casual Shoes">Casual Shoes</option>
+		  <option value="Formal Shoes">Formal Shoes</option>
+		</select>
+&nbsp;&nbsp;&nbsp;<label for="date">Purchase Date:</label>
+<input type="date" name="date" id="date" required>
+<!--&nbsp;&nbsp;&nbsp;<label for="date1">To Date:</label>
+<input type="date" name="date1" id="date1" required>-->
+
+<button>Apply Filter</button>
+</form>
+<font color="red"><span th:text="${date}"></span></font>
+	<table>
+		<tr>
+    <th>ID</th>
+    <th>PROD_NAME</th>
+    <th>PROD_PRICE</th>
+    <th>CATEGORY</th>
+    <th>PURCHASE_DATE</th>
+    
+  </tr>
+		<tr th:each="data : ${list}">
+            <td><span th:text="${data.id}"> ID </span></td>
+            <td><span th:text="${data.prod_name}"> PROD_NAME </span></td>
+            <td><span th:text="${data.prod_price}"> PROD_PRICE </span></td>
+            <td><span th:text="${data.category}"> CATEGORY </span></td>
+            <td><span th:text="${data.purchase_date}"> PURCHASE_DATE </span></td>
+        </tr>
+	
+		<!-- <tr th:each="data: list">
+			<td class="text-center" th:text="${data}">data</td>
+		</tr> -->
+	</table>
+</body>
+</html>

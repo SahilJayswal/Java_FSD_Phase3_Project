@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+<style>
+body{
+background-color: #f8f9fa;
+}
+ul {
+  list-style-type: none;
+  margin: -8px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{
+color: #dce1de;
+}
+/* footer{
+    position: relative;
+    top: 40px;
+    color: black;
+    padding: 9px 25px;
+    text-align: center;
+} */
+</style>
+</head>
+<body>
+
+<ul>
+  <li style="float:left"><a href="dashboard">Dashboard</a></li>
+  <li><a href="logout"> Logout</a></li>
+  <li><a href="changepassword"> Change Password</a></li>
+  <li><a href="/purchase"> Purchase report</a></li>
+  <li><a href="/manage"> Manage Products</a></li>
+  <li><a href="/user"> User List</a></li>
+  
+</ul>
+
+<h1 align="center">Admin Dashboard</h1>
+<p align=center>You are LoggedIn as : Administrator<br></p><br>
+<div class="adminaction">
+
+</div>
+<!-- <footer>
+<div>
+Copyright &copy; sportyshoes.com developed by Sahil Jayswal. All rights reserved!
+</div>
+</footer> -->
+</body>
+</html>

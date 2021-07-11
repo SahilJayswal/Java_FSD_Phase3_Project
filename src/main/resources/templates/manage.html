@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+<style>
+body{
+background-color: #f8f9fa;
+}
+ul {
+  list-style-type: none;
+  margin: -8px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{
+color: #dce1de;
+}
+
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 32%;
+  padding: 0 10px;
+}
+
+.row {margin: 70px -5px;}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+a{
+text-decoration: none;
+}
+img{
+width: 100%;
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li style="float:left"><a href="dashboard">Dashboard</a></li>
+  <li><a href="logout"> Logout</a></li>
+  <li><a href="changepassword"> Change Password</a></li>
+  <li><a href="/purchase"> Purchase report</a></li>
+  <li><a href="/manage"> Manage Products</a></li>
+  <li><a href="/user"> User List</a></li>
+  
+</ul>
+
+<div class="row">
+  <div class="column">
+<div class="card">
+  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_product_card"><img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+  <h3>Tailored Jeans</h3>
+  </a>
+</div>
+  </div>
+
+  <div class="column">
+<div class="card">
+  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_product_card"><img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+  <h3>Tailored Jeans</h3>
+  </a>
+</div>
+  </div>
+  
+  <div class="column">
+<div class="card">
+  <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_product_card"><img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+  <h3>Tailored Jeans</h3>
+  </a>
+</div>
+  </div>
+  
+</div>
+
+
+</body>
+</html>

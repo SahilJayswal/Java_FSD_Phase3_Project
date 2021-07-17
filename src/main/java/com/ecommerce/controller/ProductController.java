@@ -65,4 +65,17 @@ public class ProductController {
 	public String deletepage(){
 		return "delete";
 	}
+	
+	@RequestMapping(value= "/editpage")
+	public String editPage(){
+		return "edit";
+	}
+	
+	@RequestMapping(value= "/edit", method = RequestMethod.POST)
+	public String edit(@RequestParam String id, @RequestParam String name, @RequestParam String price, @RequestParam String cat ) {
+		int id1 = Integer.parseInt(id); 
+		productRepository.save(new Product(id1, name, price, cat));
+		return "success";
+	}	
+	
 }

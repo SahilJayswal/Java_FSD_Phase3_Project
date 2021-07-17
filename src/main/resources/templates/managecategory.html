@@ -101,12 +101,6 @@ button:hover{
             <td><span th:text="${data.prod_name}"> PROD_NAME </span></td>
             <td><span th:text="${data.prod_price}"> PROD_PRICE </span></td>
             <td><span th:text="${data.category}"> CATEGORY </span></td>
-    <!--<td>
-    <form action="/edit" method="post">
-    	<input type="hidden" id="id" name="id" value="${data.id}">
-    	<button type="submit">Edit</button>
-    </form>
-    </td>-->
         </tr>
 	
 		<!-- <tr th:each="data: list">
@@ -115,8 +109,9 @@ button:hover{
 		
 	</table>
 <br><br><br>
-<a class="back" href="/manage">Back</a>
-<a class="back" href="/delete">Delete Product</a>
+<a class="back" href="/manage">Back</a>&nbsp;&nbsp;
+<a class="back" href="/delete">Delete Product</a>&nbsp;&nbsp;
+<a class="back" href="/editpage">Edit Product</a>
 
 </body>
 </html>

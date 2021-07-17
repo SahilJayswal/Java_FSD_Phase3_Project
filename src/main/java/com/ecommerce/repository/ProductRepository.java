@@ -69,6 +69,11 @@ public class ProductRepository {
 		 entityManager.remove(product); 
 	 }
 	 
+		
+	 public void save(Product product) {
+		entityManager.merge(product);
+	 }
+	 
 	/*
 	 * public void deleteById(String id) {
 	 * template.update("delete from product where id="+id+"", new
